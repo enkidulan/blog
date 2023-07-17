@@ -364,3 +364,5 @@ html_static_path = ["_static"]
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = "Enkidulansblogdoc"
+
+github_pages = "enkidulan"
