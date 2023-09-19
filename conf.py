@@ -200,6 +200,7 @@ extensions = [
     "sphinx.ext.todo",
     "alabaster",
     "ablog",
+    'sphinxcontrib.googleanalytics',
 ]
 
 # The suffix(es) of source filenames.
@@ -366,3 +367,5 @@ html_static_path = ["_static"]
 htmlhelp_basename = "Enkidulansblogdoc"
 
 github_pages = "enkidulan"
+
+googleanalytics_id = "364291371"
