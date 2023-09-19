@@ -368,4 +368,7 @@ htmlhelp_basename = "Enkidulansblogdoc"
 
 github_pages = "enkidulan"
 
-googleanalytics_id = "364291371"
+
+html_theme_options["analytics"] = {
+    "google_analytics_id": "UA-37883614-1",
+}
