@@ -3,11 +3,11 @@
 }
 
 .bd-sidebar-primary {
-    background-color: #93877503;
+    background-image: url("background.jpeg");
 }
 
 .bd-sidebar-secondary {
-    background-color: #93877503;
+    background-image: url("background.jpeg");
 }
 
 .bd-header {
