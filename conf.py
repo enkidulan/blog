@@ -200,7 +200,6 @@ extensions = [
     "sphinx.ext.todo",
     "alabaster",
     "ablog",
-    'sphinxcontrib.googleanalytics',
 ]
 
 # The suffix(es) of source filenames.
