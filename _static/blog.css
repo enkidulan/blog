@@ -1,0 +1,17 @@
+.bd-container {
+    background-image: url("background.jpeg");
+}
+
+.bd-sidebar-primary {
+    background-color: #93877503;
+}
+
+.bd-sidebar-secondary {
+    background-color: #93877503;
+}
+
+.bd-header {
+    background: url("nav-bar-bk.jpeg") !important;
+    background-size: contain !important;
+
+}
