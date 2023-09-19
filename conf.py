@@ -369,5 +369,5 @@ github_pages = "enkidulan"
 
 
 html_theme_options["analytics"] = {
-    "google_analytics_id": "UA-37883614-1",
+    "google_analytics_id": "G-R5VCB5JGKZ",
 }
