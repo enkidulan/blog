@@ -35,6 +35,9 @@ jobs:
       run: pipenv run ablog build
     - name: Publish blog
       env:
-        BLOG_DEPLOY_TOKEN: ${{ secrets.BLOG_DEPLOY_TOKEN }}
-      run: pipenv run ablog deploy --github-token BLOG_DEPLOY_TOKEN
+        GITHUB_TOKEN: ${{ secrets.BLOG_DEPLOY_TOKEN }}
+      run: |
+        git config --global user.email "supamaxy@gmail.com"
+        git config --global user.name "Blog Bot"
+        pipenv run ablog deploy --github-token GITHUB_TOKEN
 
