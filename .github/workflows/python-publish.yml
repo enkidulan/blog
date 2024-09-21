@@ -34,5 +34,7 @@ jobs:
     - name: Build blog
       run: pipenv run ablog build
     - name: Publish blog
+      env:
+        BLOG_DEPLOY_TOKEN: ${{ secrets.BLOG_DEPLOY_TOKEN }}
       run: pipenv run ablog deploy --github-token BLOG_DEPLOY_TOKEN
 
