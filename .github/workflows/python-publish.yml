@@ -33,5 +33,5 @@ jobs:
     - name: Build blog
       run: pipenv run ablog build
     - name: Publish blog
-      run: pipenv run ablog deploy --github-token GITHUB_DEPLOY_TOKEN
+      run: pipenv run ablog deploy --github-token BLOG_DEPLOY_TOKEN
       
