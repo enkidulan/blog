@@ -39,5 +39,5 @@ jobs:
       run: |
         git config --global user.email "supamaxy@gmail.com"
         git config --global user.name "Blog Bot"
-        pipenv run ablog deploy --github-token GITHUB_TOKEN --github-url enkidulan:${{ secrets.BLOG_DEPLOY_TOKEN }}@github.com
+        pipenv run ablog deploy --github-token GITHUB_TOKEN --github-ssh
 
