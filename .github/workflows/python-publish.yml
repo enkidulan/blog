@@ -19,7 +19,7 @@ permissions:
 jobs:
   deploy:
 
-    runs-on: python:3.11-slim
+    runs-on: python:3.11
 
     steps:
     - uses: actions/checkout@v4
