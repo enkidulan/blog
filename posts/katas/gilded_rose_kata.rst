@@ -271,7 +271,7 @@ category instead item name. Let's have a go on the code:
 
 
     def get_rule(item: Item):
-        return category_rule_mapping.get(item.name, category_rule_mapping[item.category])
+        return category_rule_mapping[item.category]
 
 
     class GildedRose(object):
