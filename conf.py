@@ -64,8 +64,8 @@ blog_authors = {
 # -- Blog Post Related --------------------------------------------------------
 
 # Format date for a post.
-post_date_format = '%b %d, %Y'
-post_date_format_short = '%b %d, %Y'
+post_date_format = "%b %d, %Y"
+post_date_format_short = "%b %d, %Y"
 
 # Number of paragraphs (default is ``1``) that will be displayed as an excerpt
 # from the post. Setting this ``0`` will result in displaying no post excerpt
@@ -280,10 +280,14 @@ html_theme = "pydata_sphinx_theme"
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-html_theme_options = {}
+html_theme_options = {
+    "secondary_sidebar_items": [],
+    "analytics": {"google_analytics_id": "G-R5VCB5JGKZ"},
+}
+
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = [alabaster.get_path()]
+# html_theme_path = [alabaster.get_path()]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -370,11 +374,4 @@ htmlhelp_basename = "Enkidulansblogdoc"
 github_pages = "enkidulan"
 
 
-html_theme_options["analytics"] = {
-    "google_analytics_id": "G-R5VCB5JGKZ",
-}
-
-
-html_context = {
-   "default_mode": "light"
-}
+html_context = {"default_mode": "light"}
