@@ -14,7 +14,6 @@ I want to share the process I followed to design the MVP for `EasyDiagrams.work 
 
 Use cases
 ----------------
-
 **Vocabulary:**
 
 - Visitor - someone accessing the site without being logged in
@@ -57,7 +56,6 @@ Use cases
 
 Constraints and assumptions
 ----------------------------------
-
 
 - PlantUML takes a significant amount of time to render a diagram, around 1s on average, which may pose challenges to user experience and infrastructure requirements.
 
@@ -108,8 +106,15 @@ Except for the rendered diagram image, the data is well suited for storing in an
 Stack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For small applications, Heroku is the easiest option for managing infrastructure, as it takes care of many tasks: TLS/SSL, routing, discovery, code delivery, database management, logging, performance monitoring, and error tracking. Additionally, Heroku offers a good deal in terms of price and functionality.
+For small applications, Heroku is the easiest option for managing infrastructure, as it takes care of many tasks: TLS/SSL, routing, discovery, code delivery, database management, logging, performance monitoring, and error tracking. Additionally, Heroku offers a good deal in terms of price and functionality. Web application will be shipped as a Docker container that is build with GitHub Actions as a CI/CD pipeline.
 
 .. image:: https://easydiagrams.work/diagrams/uJXaWLmPOopwiWiEvWz0vLI32Ru7ZXG1/image.svg
     :align: center
+
+
+**Backend**. For the backend web framework, Pyramid is a good choice for the MVP. It’s easy to use, offers good performance, and its design makes it straightforward to adopt a component-based architecture from the start, allowing the application to scale without turning into a “big ball of mud.” Pyramid also has a rich ecosystem of plugins that cover most of the MVP’s needs—not to mention that Pyramid is my favorite framework.
+
+**Database**. For the database, PostgreSQL is the best choice (as it is best default choice for most applications). It’s well-suited for the MVP, fully supported by Heroku out of the box, provides ACID guaranties, and has great performance.
+
+**Frontend**. For the frontend, HTMX is ideal because it allows you to create a dynamic web application with minimal effort and without writing any JavaScript or setting up a build pipeline. That’s a huge advantage for an MVP (especially that I'm short on good JS dev). The backend rendering will be handled by Pyramid, and for the design and layout, Bootstrap is a great option since it’s easy to use and comes with many ready-to-use components.
 
