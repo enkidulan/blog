@@ -2,9 +2,10 @@
    :tags: python, software-design, system-design, plantuml, easy_diagrams
    :category: python
    :author: Maksym Shalenyi
-   :excerpt: 2
-   :image: 1
+   :excerpt: 1
+   :image: 0
    :nocomments:
+
 
 Designing EasyDiagrams MVP
 ============================
