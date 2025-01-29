@@ -6,17 +6,13 @@
    :image: 0
    :nocomments:
 
-EasyDiagram: Designing a Roadmap
+EasyDiagram: Next Steps
 ================================
 
-
-This document aims to define a multistage strategy for improving the EasyDiagrams's performance
+Here I define a multistage strategy for improving the EasyDiagrams's performance
 and functionality while maintaining an optimal performance-to-cost balance and allowing for
-organic growth. In this post I'm establishing a refactoring framework/guideline with clearly
-defined steps, where each step has an assigned priority and enables a class of features
-while addressing certain functional/non-functional aspects. This is a roadmap for the approach
-aimed at minimizing the likelihood of needing to redesign and rewrite the system in the future.
-
+organic growth. Establishing a refactoring framework/guideline with clearly
+defined steps is crucial for the project's long-term success. So let's dive in!
 
 Analysis
 --------

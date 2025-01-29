@@ -7,7 +7,7 @@
    :nocomments:
 
 
-Designing EasyDiagrams MVP
+EasyDiagrams: Designing MVP
 ============================
 
 I want to share the process I followed to design the MVP for `EasyDiagrams.work <https://EasyDiagrams.work>`__, along with the outcome. Each chapter in this document represents a step in my research and design process. The main goal of creating this document before writing any code was to anticipate potential challenges—even those that initially seemed trivial—and to capture the goals, as well as the key decisions about design and architecture.
