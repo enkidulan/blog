@@ -90,7 +90,7 @@ caching. The approach involves adding two version fields, **code_version** and
 If **image_version** does not match **code_version**, it indicates that the image is
 outdated and should be regenerated, or that the code is invalid.
 
-.. image:: https://easydiagrams.work/diagrams/gNeq7FKv3nVR7Fzi8XS0V11nsqcyrzyK/image.svg
+.. image:: https://easydiagrams.work/diagrams/gNeq7FKv3nVR7Fzi8XS0V11nsqcyrzyK/image.png
    :align: center
 
 Step 2. Async Image Rendering
@@ -112,7 +112,7 @@ require additional infrastructure, but a backoff safeguard is necessary to mitig
 possibility of DoS-ing the service. Eventually, long polling can be replaced with WebSockets
 or server push notifications for more efficient updates.
 
-.. image:: https://easydiagrams.work/diagrams/d6FVp61ao9bTwqFRZNp0mNzcg7g9rbDH/image.svg
+.. image:: https://easydiagrams.work/diagrams/d6FVp61ao9bTwqFRZNp0mNzcg7g9rbDH/image.png
     :align: center
 
 To communicate with workers, the server uses a queue table in the same database that stores
@@ -123,7 +123,7 @@ messaging brokers like RabbitMQ or SQS. However, PostgreSQL naturally supports t
 ``INSERT INTO … ON CONFLICT (id) DO UPDATE`` syntax. Since the database is already
 provisioned, this approach also avoids introducing any additional infrastructure overhead.
 
-.. image:: https://easydiagrams.work/diagrams/Fge9fF4CaTCXqOJOaolVz0sCuTFq7b6V/image.svg
+.. image:: https://easydiagrams.work/diagrams/Fge9fF4CaTCXqOJOaolVz0sCuTFq7b6V/image.png
     :align: center
 
 The downside of this approach is that managing the queue table is now the responsibility of
@@ -174,13 +174,13 @@ Query Workflow for the Image Endpoint
 1. Check if the requested diagram is in the cache.
 2. If not, query the database.
 
-The URL for viewing an image is ``/{id}/image.svg`` — this is the URL that is embedded
+The URL for viewing an image is ``/{id}/image.png`` — this is the URL that is embedded
 in external services. For editing, the editor explicitly provides the image version:
-``/{id}/image.svg?v=123``. This versioning ensures the cache always returns an image
+``/{id}/image.png?v=123``. This versioning ensures the cache always returns an image
 version that is equal to or newer than what the editor requested. Consequently, the editor
 sees the latest version instead of any stale cached content.
 
-.. image:: https://easydiagrams.work/diagrams/vt9MBbfOHqgMTTGyxODev3xipiblIAYZ/image.svg
+.. image:: https://easydiagrams.work/diagrams/vt9MBbfOHqgMTTGyxODev3xipiblIAYZ/image.png
     :align: center
 
 While an editor can see the updates right away, additional logic is needed to promote
@@ -190,7 +190,7 @@ and evicts them from the cache. The cache, by default, has an eviction timeout o
 so even if the eviction process fails, the record won’t stay in the cache for more than a
 day.
 
-.. image:: https://easydiagrams.work/diagrams/gDz2oz8WLArSguDWgkMsMsrUdQGcJuu6/image.svg
+.. image:: https://easydiagrams.work/diagrams/gDz2oz8WLArSguDWgkMsMsrUdQGcJuu6/image.png
     :align: center
 
 The eviction process uses long polling on the database, which does create some additional
@@ -255,12 +255,12 @@ The extended model must support the following use cases:
 - A folder or diagram can belong to only one folder at a time.
 - A user can make a diagram publicly accessible.
 
-.. image:: https://easydiagrams.work/diagrams/gcIoNGCclM1lMZ5P3ExT7Hu72FZx21VC/image.svg
+.. image:: https://easydiagrams.work/diagrams/gcIoNGCclM1lMZ5P3ExT7Hu72FZx21VC/image.png
     :align: center
 
 SQL ERD for the new model:
 
-.. image:: https://easydiagrams.work/diagrams/LI3vzyrzPrUyk1fwdCgwwfiwiAgGDAyi/image.svg
+.. image:: https://easydiagrams.work/diagrams/LI3vzyrzPrUyk1fwdCgwwfiwiAgGDAyi/image.png
     :align: center
 
 In the new model, sharding is done by account, with minimal denormalization of the user

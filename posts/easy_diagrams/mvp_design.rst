@@ -79,7 +79,7 @@ Model
 
 The initial model will accommodate the basic functionality of user and diagram records. Both code and image are stored as diagram properties; the `is_public` property is used for access control.
 
-.. image:: https://easydiagrams.work/diagrams/jT3oIjGnZhLoSHJlYzOeP8XkRjmdUjmY/image.svg
+.. image:: https://easydiagrams.work/diagrams/jT3oIjGnZhLoSHJlYzOeP8XkRjmdUjmY/image.png
     :align: center
 
 Workflow
@@ -87,7 +87,7 @@ Workflow
 
 Given that the initial MVP doesn’t have to deal with large scale and load, most of the interactions are trivial to the point that many mainstream web frameworks provide needed functionality out-of-the-box. The only challenging part is the requests that involve PlantUML rendering, as it takes a long time to transform code into image, anywhere from 0.7 to 1.5  seconds. The right approach to deal with slow tasks is to decouple them from a request lifetime via any of the asynchronous processing methods (message queue, events, etc…). Nonetheless, for the initial MVP it makes more sense to keep it simple and have the synchronous execution flow for all requests, even ones that are slow and include PlantUML rendering:
 
-.. image:: https://easydiagrams.work/diagrams/malJ31fEBmO1HqWXM1BcC46tYyRM5Ell/image.svg
+.. image:: https://easydiagrams.work/diagrams/malJ31fEBmO1HqWXM1BcC46tYyRM5Ell/image.png
     :align: center
 
 The downside of this approach is that **PlantUML rendering requests will clog the system** as they are **30x times slower** than other types of requests (1400 ms for rendering image vs 40 ms viewing).  Introducing **non-rendering instances will mitigate the issue**, which can be easily achieved with reverse proxy redirecting all requests involving changes to UML to dedicated instances.
@@ -108,7 +108,7 @@ Stack
 
 For small applications, Heroku is the easiest option for managing infrastructure, as it takes care of many tasks: TLS/SSL, routing, discovery, code delivery, database management, logging, performance monitoring, and error tracking. Additionally, Heroku offers a good deal in terms of price and functionality. Web application will be shipped as a Docker container that is build with GitHub Actions as a CI/CD pipeline.
 
-.. image:: https://easydiagrams.work/diagrams/uJXaWLmPOopwiWiEvWz0vLI32Ru7ZXG1/image.svg
+.. image:: https://easydiagrams.work/diagrams/uJXaWLmPOopwiWiEvWz0vLI32Ru7ZXG1/image.png
     :align: center
 
 
