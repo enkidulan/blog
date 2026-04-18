@@ -1,6 +1,22 @@
+# Blog
+
+## Setup
+```bash
+pipenv install
 pipenv shell
+```
 
+## Build
+```bash
 ablog build
-ablog serve -r
+```
 
+## Preview
+```bash
+ablog serve -r
+```
+
+## Deploy
+```bash
 ablog deploy --github-ssh
+```
